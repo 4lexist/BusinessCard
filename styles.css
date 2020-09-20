@@ -3,12 +3,14 @@
     --blue: rgb(2, 10, 39);
 
     --border-width: 0.5rem;
+}
 
+/*
     --breakpoint-XL: 1920px;
     --breakpoint-LG: 1080px;
     --breakpoint-MD: 600px;
     --breakpoint-SM: 400px;
-}
+ */
 
 html {
     height: 100%;
@@ -27,7 +29,7 @@ body {
 
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 
     font-family: GT-Flexa, Helvetica, sans-serif;
 }
@@ -35,12 +37,23 @@ body {
 .container {
     border: solid var(--border-width);
     position: absolute;
-    top: 2rem;
-    left: 2rem;
-    right: 2rem;
-    bottom: 2rem;
-    overflow: hidden;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    overflow-x: hidden;
 }
+
+@media (min-width: 600px) {
+    .container {
+        top: 2rem;
+        left: 2rem;
+        right: 2rem;
+        bottom: 2rem;
+    }
+}
+
+/* Header beginning */
 
 header {
     overflow: hidden;
@@ -53,7 +66,7 @@ header {
     transform: translate(-200px, 0);
 }
 
-@media (min-width: var(--breakpoint-LG)) {
+@media (min-width: 1080px) {
     .header1, .header4 {
         width: 150%;
         transform: translate(-25%, 0);
@@ -99,11 +112,14 @@ hr {
     width: 110%;
 }
 
+/* Header end */
+
+/* Illustration beginning */
+
 figure {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    height: 35vh;
     margin: 0;
-    width: 50%;
 }
 
 img, .big-circle, .small-circle {
@@ -113,7 +129,8 @@ img, .big-circle, .small-circle {
 }
 
 img {
-    height: 60vh;
+    height: 30vh;
+    max-height: calc(100vh - 20rem);
     z-index: 20;
     bottom: 0;
 }
@@ -125,9 +142,11 @@ img {
 
 .big-circle {
     z-index: 10;
-    height: 50vh;
-    width: 50vh;
+    height: 25vh;
+    width: 25vh;
     bottom: 4rem;
+    max-height: calc(100vh - 20rem - 5rem);
+    max-width: calc(100vh - 20rem - 5rem);
 }
 
 .small-circle {
@@ -135,24 +154,46 @@ img {
     height: 5vh;
     width: 5vh;
     bottom: 3rem;
+    max-height: calc(100vh - 20rem - 7rem);
+    max-width: calc(100vh - 20rem - 7rem);
 }
 
+@media (min-width: 1080px) {
+    figure {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+    }
+
+    img {
+        height: 60vh;
+        z-index: 20;
+        bottom: 0;
+    }
+
+    .big-circle {
+        height: 50vh;
+        width: 50vh;
+        bottom: 4rem;
+    }
+
+    .small-circle {
+        height: 5vh;
+        width: 5vh;
+        bottom: 3rem;
+    }
+}
+
+/* Illustration end */
+
+/* Text beginning */
+
 .text-container {
-    position: absolute;
-    display: flex;
-    width: 50%;
-    left: 50%;
-    top: 13rem;
-    bottom: 0;
     z-index: 40;
 }
 
 .text {
-    display: inline-block;
-    margin: auto;
-    max-width: 400px;
-    padding-left: 4rem;
-    padding-right: 2rem;
+    padding: 1rem;
     font-size: 1.125rem;
     line-height: 1.6;
 }
@@ -177,4 +218,25 @@ img {
 .underlined {
     text-decoration: underline;
     font-style: normal;
+}
+
+@media (min-width: 1080px) {
+    .text-container {
+        position: absolute;
+        display: flex;
+        width: 50%;
+        left: 50%;
+        top: 13rem;
+        bottom: 0;
+        z-index: 40;
+    }
+
+    .text {
+        margin: auto;
+        max-width: 400px;
+        padding-left: 4rem;
+        padding-right: 2rem;
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
 }
