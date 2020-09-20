@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'GT-Flexa';
+    src: url('../assets/fonts/GT-Flexa-Regular-Trial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT-Flexa-Italic';
+    src: url('../assets/fonts/GT-Flexa-Regular-Italic-Trial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT-Flexa-Black';
+    src: url('../assets/fonts/GT-Flexa-X-Compressed-Black-Trial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT-Flexa-Bold';
+    src: url('../assets/fonts/GT-Flexa-X-Compressed-Bold-Trial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
